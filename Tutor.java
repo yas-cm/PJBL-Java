@@ -24,10 +24,12 @@ public class Tutor{
    public String getEndereco() {return endereco;}
    public LocalDate getDataNasc() {return dataNasc;}
    
+   // Adiciona pet
+   public void incluiPet(String nomePet, String tipoPet){
+      pet.add(new Pet(nomePet,tipoPet));
+   }
    
-   
-   
-   
+   // Falta a parte de juntar os dados de cada tutor em uma string pra poder imprimir mais pra frente
    
    
    
