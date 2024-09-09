@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Pet{
+public class Pet{ //Cria a classe Pet
    //Atributos
    private String nomePet;
    private String tipoPet;
