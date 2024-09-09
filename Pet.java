@@ -9,10 +9,10 @@ public class Pet{ //Cria a classe Pet
       this.tipoPet = tipoPet;
    }
    //Getters
-   public String getNomePet(){
+   public String getNomePet(){ //Recebe o nome do Pet
       return nomePet;
    }
-   public String getTipoPet(){
+   public String getTipoPet(){ //Recebe o tipo do Pet
       return tipoPet;
    }
 }
