@@ -39,7 +39,7 @@ public class Tutor{
       pet.add(new Pet(nomePet,tipoPet));
    }
    
-   // Gera莽茫o de string com os dados do tutor   
+   // Gera玢o de string com os dados do tutor   
    public String toString(){
       String ts = String.format("Cod. do tutor: %d\n", codigo);
       ts += String.format("  Nome...........: %s\n", nome);
@@ -56,42 +56,7 @@ public class Tutor{
       }
       return ts;
       }
-}   
 
-// 
-// // pelo menos tr锚s tutores com seus pets
-// public static void popularCadastro() {
-//    Tutor t; // Objeto tutor.
-//    
-//    int codTut = geraCodTut(); // Cria c贸digo sequencial inicando em 1.
-//    t = new Tutor(codTut,"Josefina das Gracas");
-//    t.setD
-//    
-//    cont.add(c);
-//    System.out.println(c.getNome()+": cadastrado.");
-//    // Adiciona contribuinte 2 com dependente.
-//    codCont=geraCodCont(); // Cria pr贸ximo c贸digo sequencial.
-//    c=new Contribuinte(codCont,"Maria Cardoso");
-//    c.incluiDep("Pedro Cardoso",2,4,2012);
-//    cont.add(c);
-//    System.out.println(c.getNome()+": cadastrado.");
-//    // Adiciona contribuinte 3.
-//    codCont=geraCodCont(); // Cria pr贸ximo c贸digo sequencial.
-//    c=new Contribuinte(codCont,"Roberto Silva");
-//    cont.add(c);
-//    System.out.println(c.getNome()+": cadastrado.");
-// }
-//    
-//    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+}
+
