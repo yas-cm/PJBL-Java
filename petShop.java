@@ -22,7 +22,7 @@ private static ArrayList<Tutor> tutores = new ArrayList<Tutor>();
          if (nome_tutor == ""){
          break;
          }
-         System.out.println("Digite dia (dd), mês (mm) e ano (aaaa) de nascimento do tutor:  \n (separados por espaços)");
+         System.out.println("Digite dia (dd), mes (mm) e ano (aaaa) de nascimento do tutor:  \n (separados por espaços)");
          String data_nasc = input.nextLine(); clearBuffer(input);
          String[] data_com = data_nasc.split(" ");
          LocalDate data = LocalDate.of(Integer.parseInt(data_com[2]),Integer.parseInt(data_com[1]), Integer.parseInt(data_com[0]));
@@ -38,24 +38,31 @@ private static ArrayList<Tutor> tutores = new ArrayList<Tutor>();
          cont++;
          break;
       case 'i':
+          System.out.println("--- CADASTRO DE TUTORES E PETS ------------------------------------------------------");
           for (Tutor ttl: tutores){
               System.out.println(ttl.toString());
           }
+          System.out.println("------------------------------------------------------------------------------");
          break;
       case 'b':
          System.out.println("Digite codigo do tutor a ser localizado: ");
          int tutor_num = input.nextInt(); clearBuffer(input);
          boolean verificador = false;
+         
          for(Tutor tt: tutores) {
+            
             if (tt.getCodigo() == tutor_num) {
-                System.out.println(tt.toString());
                 verificador = true;
+                System.out.println("--- Tutor localizado ---");
+                
+                System.out.println(tt.toString());
+                
                 break;
             }
 
          }
           if(verificador == false) {
-              System.out.println("codigo não localizado");
+              System.out.println("codigo nao localizado");
           }
           break;
 
@@ -66,15 +73,18 @@ private static ArrayList<Tutor> tutores = new ArrayList<Tutor>();
               for (Tutor ttd: tutores){
                   if (tutor_num_del == ttd.getCodigo()){
                       tutores.remove(tutores.indexOf(ttd));
-                      System.out.println("Tutor codigo " + tutor_num_del + " excluido");
+                      System.out.println("--- Tutor (+pets) com codigo " + tutor_num_del + " excluido com sucesso! ---");
                       verificadel = true;
                       break;
                   }
               }
                   if (verificadel == false){
-                      System.out.println("esse Codigo nao existe");
+                      System.out.println("Esse codigo nao existe");
                   }
                   break;
+          case 'x':
+               System.out.println("--- Programa encerrado ---");
+               break;
           default:
               System.out.println("Opcao invalida!!!");
 
@@ -110,14 +120,20 @@ public static int popularCadastro(int cont) {
    t.incluiPet("Filomena","Cachorro");
    tutores.add(t);
       
-   Tutor tt;
+   Tutor t2;
    
-   t = new Tutor(cont+1,"Bernardo Ribeirinho","Rua Presidente Patrick, 456",LocalDate.of(1990,12,4));
-   tt.incluiPet("Assobio","Passaro");
-   tutores.add(tt)
+   t2 = new Tutor(cont+1,"Bernardo Ribeirinho","Rua Presidente Patrick, 456",LocalDate.of(1990,12,15));
+   t2.incluiPet("Assobio","Passaro");
+   t2.incluiPet("GlubGlub","Peixe");
+   tutores.add(t2);
    
+   Tutor t3;
    
-   return cont+2;
+   t3 = new Tutor(cont+2,"Arnaldo Araujo","Rua Amora, 444",LocalDate.of(1994,4,4));
+   t3.incluiPet("Arnaldinho","Gato");
+   tutores.add(t3);
+      
+   return cont+3;
    }
    
 } 
