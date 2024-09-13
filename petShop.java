@@ -90,6 +90,7 @@ class petShop{
                     break;
                 default:
                     System.out.println("Opcao invalida!!!");
+                    break;
 
 
             }
