@@ -21,40 +21,26 @@ class petShop {
                 case 'c': // Caso opcao desejada for cadastrar tutor + pets
                     cont = cadastro(cont);
                     break;
+                    
                 case 'i': // Caso a opcao seja imprimir cadastro
                     imprimir();
                     break;
+                    
                 case 'b': // Caso a opcao seja buscar pets por codigo tutor
                     buscar();
-
                 break;
 
                 case 'e': // Caso a opcao seja excluir pets por codigo tutor
-                    System.out.println("Digite o codigo do tutor a ser excluido: ");
-                    int tutor_num_del = input.nextInt();
-                    clearBuffer(input);
-                    boolean verificadel = false; // Booleano verificador para controle do loop
-                    for (Tutor ttd : tutores) { // Percorre a lista Tutor
-                        if (tutor_num_del == ttd.getCodigo()) { // Numero digitado = indice tutor
-                            tutores.remove(tutores.indexOf(ttd)); // Remove tutor
-                            System.out.println("Tutor codigo " + tutor_num_del + " excluido");
-                            verificadel = true; // Atualiza boleano
-                            break;
-                        }
-                    }
-                    if (verificadel == false) {
-                        System.out.println("esse Codigo nao existe");
-                    }
+                    excluir();
                     break;
 
                 case 'x': // Caso a opcao desejada seja encerar o programa
                     System.out.println("Programa encerrando");
                     break;
+                    
                 default: // Caso o usuario digite nenhuma das opcoes
                     System.out.println("Opcao invalida!!!");
                     break;
-
-
             }
         }
     }
@@ -129,7 +115,7 @@ class petShop {
 
     }
 
-    private static int cadastro(int cont) {
+    private static int cadastro(int cont) { // Metodo para cadastro
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -169,7 +155,7 @@ class petShop {
         }
         return cont;
     }
-    private static void imprimir(){
+    private static void imprimir(){ // Metodo para imprimir
         for (Tutor ttl : tutores) { // ttl eh um iterador
             System.out.println(ttl.toString()); // Imprime os cadastros
         }
@@ -191,7 +177,24 @@ class petShop {
         if (verificador == false) { // Se o codigo digitado for diferente do codigo tutor
             System.out.println("codigo nao localizado");
         }
+        
     }
+    
+   public static void excluir(){ // Metodo para excluir
+   Scanner input = new Scanner(System.in);
+   System.out.println("Digite o codigo do tutor a ser excluido: ");
+        int tutor_num_del = input.nextInt(); clearBuffer(input);
+        boolean verificadel = false; // Booleano verificador para controle do loop
+        for (Tutor ttd: tutores){ // Percorre a lista Tutor
+            if (tutor_num_del == ttd.getCodigo()){ // Numero digitado = indice tutor
+                tutores.remove(tutores.indexOf(ttd)); // Remove tutor
+                System.out.println("Tutor codigo " + tutor_num_del + " excluido");
+                verificadel = true; // Atualiza boleano
+                break;
+            }
+        }
+        if (verificadel == false){
+            System.out.println("esse Codigo nao existe");
+        }
+   } 
 }
-
-
